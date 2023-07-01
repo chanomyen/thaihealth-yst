@@ -38,7 +38,7 @@ window.onload = async function () {
         console.log("Logged In!");
     } else {
         console.log("Not logged In!");
-        liff.login();
+        // liff.login();
     }
     const profile = await liff.getProfile();
     lineProfile = profile
@@ -83,5 +83,5 @@ silicosisRiskForm.addEventListener('submit', async (event) => {
     // const riskScore = calculateRisk(dustDensity, workHours, hasDisease, workLocation);
     // const riskLevel = calculateLevel(riskScore);
     const response = await getRiskLevel(dustDensity, workHours, hasDisease, workLocation);
-    goToResultPage(response.riskLevel);
+    // goToResultPage(response.riskLevel);
 });

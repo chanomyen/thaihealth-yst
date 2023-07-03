@@ -11,13 +11,11 @@ const recommendations = [
     ],
     [
         "•  ปิดครอบแหล่งกำเนิดฝุ่น",
-        "•  เปิดใช้ระบบน้ำฉีดพ่นขณะทำงาน",
         "•  ปรับลดชั่วโมงการทำงาน",
         "•  สวมใส่หน้ากากป้องกันฝุ่นชนิด N95 ขึ้นไป"
     ],
     [
         "•  ปิดครอบแหล่งกำเนิดฝุ่น",
-        "•  เปิดใช้ระบบน้ำฉีดพ่นขณะทำงาน",
         "•  ติดตาม ตรวจวัดปริมาณความเข้มข้นฝุ่นซิลิกา",
         "•  ปรับลดชั่วโมงการทำงาน",
         "•  สวมใส่หน้ากากป้องกันฝุ่นชนิด N95 ขึ้นไป",
@@ -25,7 +23,6 @@ const recommendations = [
     ],
     [
         "•  ปิดครอบแหล่งกำเนิดฝุ่น",
-        "•  เปิดใช้ระบบน้ำฉีดพ่นขณะทำงาน",
         "•  ติดตาม ตรวจวัดปริมาณความเข้มข้นฝุ่นซิลิกา",
         "•  ปรับลดชั่วโมงการทำงาน",
         "•  สวมใส่หน้ากากป้องกันฝุ่นชนิด N95 ขึ้นไป",
@@ -137,7 +134,7 @@ infographicButton.addEventListener('click', async (event) => {
     if (baseUrl.includes("github")) {
         baseUrl = `${baseUrl}/thaihealth-yst`;
     }
-    const nextPage = `${baseUrl}/infographic.html`;
+    const nextPage = `${baseUrl}/informations.html`;
     console.log(nextPage);
     window.location.replace(nextPage);
 });

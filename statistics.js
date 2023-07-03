@@ -12,7 +12,7 @@ const chartTitle = {
 
 // Functions
 const getStatisticsData = async () => {
-    const baseUrl = 'https://asia-southeast1-thai-health-x.cloudfunctions.net/api/silicosis/statistics';
+    const baseUrl = 'https://asia-southeast1-thai-health-x.cloudfunctions.net/apiYasothon/yst/silicosis/statistics';
     // const baseUrl = 'http://localhost:5001/thai-health-x/asia-southeast1/api/silicosis/statistics';
     return await fetch(baseUrl)
         .then(res => res.json())

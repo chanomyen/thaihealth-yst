@@ -13,7 +13,7 @@
     <div class="container mt-3" style="max-width: 540px;">
         <div class="card">
             <div class="card-header" style="background-color: blanchedalmond;">
-                <h1 class="text-center">ลงทะเบียนผู้ประกอบอาชีพแกะสลักหิน</h1>
+                <h1 class="text-center">ลงทะเบียนผู้ประกอบอาชีพทำหมอนขิด</h1>
             </div>
             <div class="card-body">
                 <form>
@@ -77,7 +77,7 @@
                     </div>
                     <div class="input-group mb-3">
                         <span for="workLocationName" class="input-group-text">ชื่อสถานที่ทำงาน</span>
-                        <input type="text" class="form-control" id="workLocationName" name="workLocationName" value="0">
+                        <input type="text" class="form-control" id="workLocationName" name="workLocationName" value="">
                     </div>
                     <div class="mb-3">
                         <label for="position">ทีตั้งที่ทำงาน</label>
@@ -100,21 +100,21 @@
                     </div>
                     <div class="mb-3">
                         <div class="col">
-                            <label for="work_type">ลักษณะการทำงาน</label>
+                            <label for="workType">ลักษณะการทำงาน</label>
                         </div>
 
-                        <div class="container text-left" id="work_type">
+                        <div class="container text-left" id="workType">
                             <div class="row">
                                 <div class="col">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="stonePond">
-                                        <label class="form-check-label" for="stonePond">ลงบ่อหิน</label>
+                                        <input class="form-check-input" type="checkbox" value="" id="hitCapoc">
+                                        <label class="form-check-label" for="hitCapoc">ตีนุ่น</label>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="cutStone">
-                                        <label class="form-check-label" for="cutStone">ตัดหิน</label>
+                                        <input class="form-check-input" type="checkbox" value="" id="fillCapoc">
+                                        <label class="form-check-label" for="fillCapoc">ยัดนุ่น</label>
                                     </div>
                                 </div>
                             </div>
@@ -122,14 +122,14 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="tockStone">
-                                        <label class="form-check-label" for="tockStone">ต๊อกหิน</label>
+                                        <input class="form-check-input" type="checkbox" value="" id="sewCapoc">
+                                        <label class="form-check-label" for="sewCapoc">เย็บนุ่น</label>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="ripStone">
-                                        <label class="form-check-label" for="ripStone">ผ่าหิน</label>
+                                        <input class="form-check-input" type="checkbox" value="" id="blowCapoc">
+                                        <label class="form-check-label" for="blowCapoc">เป่านุ่นออก</label>
                                     </div>
                                 </div>
                             </div>
@@ -137,8 +137,8 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="carveStone">
-                                        <label class="form-check-label" for="carveStone">แกะสลักหิน</label>
+                                        <input class="form-check-input" type="checkbox" value="" id="containProduct">
+                                        <label class="form-check-label" for="containProduct">บรรจุผลิภัณฑ์</label>
                                     </div>
                                 </div>
                             </div>
@@ -155,14 +155,14 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <span for="work-hours" class="input-group-text">ทำงานวันละ</span>
-                        <input type="number" class="form-control" id="work_hours" name="work_hours" required>
-                        <span for="work-hours" class="input-group-text">ชั่วโมง</span>
+                        <span for="workHours" class="input-group-text">ทำงานวันละ</span>
+                        <input type="number" class="form-control" id="workHours" name="workHours" required>
+                        <span for="workHours" class="input-group-text">ชั่วโมง</span>
                     </div>
                     <div class="input-group mb-3">
-                        <span for="work-days" class="input-group-text">ทำงานสัปดาห์ละ</span>
-                        <input type="number" class="form-control" id="work_days" name="work_days" required>
-                        <span for="work-days" class="input-group-text">วัน</span>
+                        <span for="workDays" class="input-group-text">ทำงานสัปดาห์ละ</span>
+                        <input type="number" class="form-control" id="workDays" name="workDays" required>
+                        <span for="workDays" class="input-group-text">วัน</span>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">ประสบการณ์ทำอาชีพแกะสลักหิน</span>
@@ -172,12 +172,12 @@
                     <div class="input-group mb-3">
                         <span for="healthBenefit" class="input-group-text">สิทธิ์รักษาพยาบาล</span>
                         <select class="form-select" id="healthBenefit" name="healthBenefit" required>
-                            <option value="สิทธิข้าราชการ">สิทธิข้าราชการ</option>
-                            <option value="สิทธิประกันสังคม">สิทธิประกันสังคม</option>
                             <option value="สิทธิบัตรทอง 30 บาท">สิทธิบัตรทอง 30 บาท</option>
                             <option value="สิทธิบัตรประกันสุขภาพต่างด้าว">สิทธิบัตรประกันสุขภาพต่างด้าว</option>
-                            <option value="สิทธิ อ.ส.ม.">สิทธิ อ.ส.ม.</option>
                             <option value="จ่ายเอง">จ่ายเอง</option>
+                            <option value="สิทธิข้าราชการ">สิทธิข้าราชการ</option>
+                            <option value="สิทธิประกันสังคม">สิทธิประกันสังคม</option>
+                            <option value="สิทธิ อ.ส.ม.">สิทธิ อ.ส.ม.</option>
                             <option value="อื่น ๆ">อื่น ๆ</option>
                         </select>
                     </div>

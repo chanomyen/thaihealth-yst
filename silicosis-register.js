@@ -26,11 +26,11 @@ userRegisterForm.addEventListener('submit', async (event) => {
 
     formDataObject.homeAddress = document.getElementById("homeAddress").value;
 
-    formDataObject.isCutStone = document.getElementById("cutStone").checked;
-    formDataObject.isStonePond = document.getElementById("stonePond").checked;
-    formDataObject.isTockStone = document.getElementById("tockStone").checked;
-    formDataObject.isRipStone = document.getElementById("ripStone").checked;
-    formDataObject.isCarveStone = document.getElementById("carveStone").checked;
+    formDataObject.hitCapoc = document.getElementById("hitCapoc").checked;
+    formDataObject.fillCapoc = document.getElementById("fillCapoc").checked;
+    formDataObject.sewCapoc = document.getElementById("sewCapoc").checked;
+    formDataObject.blowCapoc = document.getElementById("blowCapoc").checked;
+    formDataObject.containProduct = document.getElementById("containProduct").checked;
     formDataObject.otherWorkTypeValue = otherWorkTypeValue;
 
     formDataObject.lineId = lineProfile.userId;
@@ -43,7 +43,7 @@ userRegisterForm.addEventListener('submit', async (event) => {
     submitBtn.innerHTML = "กำลังส่งข้อมูล...";
     submitBtn.disabled = true;
     submitBtn.className = "btn btn-info btn-lg";
-    const url = "https://asia-southeast1-thai-health-x.cloudfunctions.net/api/user/"
+    const url = "https://asia-southeast1-thai-health-x.cloudfunctions.net/apiYasothon/yst/user/"
     fetch(url, {
         method: "POST",
         headers: {
@@ -92,7 +92,7 @@ function loadLIFF() {
 }
 
 async function isRegisted(userId) {
-    const url = `https://asia-southeast1-thai-health-x.cloudfunctions.net/api/user/?userId=${userId}`
+    const url = `https://asia-southeast1-thai-health-x.cloudfunctions.net/apiYasothon/yst/user/?userId=${userId}`
     return fetch(url, {
         method: "GET"
     })
@@ -104,7 +104,7 @@ async function isRegisted(userId) {
 function goToAssessmentPage() {
     let baseUrl = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
     if (baseUrl.includes("github")) {
-        baseUrl = `${baseUrl}/thaihealth`;
+        baseUrl = `${baseUrl}/thaihealth-yst`;
     }
     const nextPage = `${baseUrl}/silicosis-risk-prediction.html`;
     console.log(nextPage);
@@ -114,12 +114,12 @@ function goToAssessmentPage() {
 window.onload = async function () {
     console.log("On load!!!")
     loadLIFF();
-    await liff.init({ liffId: "1660957751-q2MDKokx" });
+    await liff.init({ liffId: "2000021821-vX3PbZPm" });
     if (liff.isLoggedIn()) {
         console.log("Logged In!");
     } else {
         console.log("Not logged In!");
-        liff.login();
+        // liff.login();
     }
 
     const profile = await liff.getProfile();
@@ -129,7 +129,7 @@ window.onload = async function () {
             console.log(data.exists);
             if (data.exists) {
                 console.log("Go to next!");
-                goToAssessmentPage();
+                // goToAssessmentPage();
             }
         })
         .catch(error => console.error(error));

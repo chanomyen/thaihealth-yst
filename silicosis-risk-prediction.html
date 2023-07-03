@@ -17,6 +17,39 @@
                 <h1 class="text-center">ประเมินความเสี่ยงผู้ประกอบอาชีพทำหมอนขิด</h1>
             </div>
             <div class="card-body text-center">
+                <h2><span class="badge text-bg-warning text-center">ตารางความเข้มของฝุ่น</span></h2>
+                <div class="table-responsive">
+                    <table class="table align-middle table-secondary table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">ตำแหน่งงาน</th>
+                                <th scope="col">ผลการประเมินความเข้มข้นฝุ่น</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ตีนุ่น</td>
+                                <td>ไม่ผ่าน</td>
+                            </tr>
+                            <tr>
+                                <td>ยัดนุ่น</td>
+                                <td>ไม่ผ่าน</td>
+                            </tr>
+                            <tr>
+                                <td>เย็บนุ่น</td>
+                                <td>ไม่ผ่าน</td>
+                            </tr>
+                            <tr>
+                                <td>เป่านุ่นออก</td>
+                                <td>ผ่าน</td>
+                            </tr>
+                            <tr>
+                                <td>บรรจุผลิตภัณฑ์</td>
+                                <td>ผ่าน</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <form id="silicosis_form">
                     <div class="input-group mb-3">
                         <span class="input-group-text">อายุ</span>
@@ -24,30 +57,32 @@
                         <span class="input-group-text">ปี</span>
                     </div>
                     <div class="input-group mb-3">
-                        <span for="work-hours" class="input-group-text">ทำงานวันละ</span>
-                        <input type="number" class="form-control" id="work_hours" name="work_hours" required>
-                        <span for="work-hours" class="input-group-text">ชั่วโมง</span>
+                        <span for="workHours" class="input-group-text">ทำงานวันละ</span>
+                        <input type="number" class="form-control" id="workHours" name="workHours" required>
+                        <span for="workHours" class="input-group-text">ชั่วโมง</span>
                     </div>
                     <div class="input-group mb-3">
-                        <span for="work-location" class="input-group-text">สถานที่ทำงาน</span>
-                        <select class="form-select" id="work_location" name="work_location" required>
+                        <span for="workLocation" class="input-group-text">สถานที่ทำงาน</span>
+                        <select class="form-select" id="workLocation" name="workLocation" required>
                             <option value="1">แยกจากที่พักอาศัย</option>
                             <option value="2">บริเวณเดียวกับที่พักอาศัย</option>
                         </select>
                     </div>
                     <div class="input-group mb-3">
-                        <span for="dust_level" class="input-group-text">ผลกาตรวจวัด PM 2.5</span>
-                        <select class="form-select" id="dust_level" name="dust_level" required>
+                        <span for="dustLevel" class="input-group-text">ผลกาตรวจวัด PM 2.5</span>
+                        <select class="form-select" id="dustLevel" name="dustLevel" required>
                             <option value=0>ผ่าน</option>
                             <option value=1>ไม่ผ่าน</option>
                         </select>
                     </div>
                     <div class="input-group mb-3">
-                        <span for="responsibility" class="input-group-text">ตำแหน่งงาน</span>
-                        <select class="form-select" id="responsibility" name="responsibility" required>
+                        <span for="workType" class="input-group-text">ตำแหน่งงาน</span>
+                        <select class="form-select" id="workType" name="workType" required>
                             <option value=0>ตีนุ่น</option>
                             <option value=1>ยัดนุ่น</option>
                             <option value=2>เย็บนุ่น</option>
+                            <option value=3>เป่านุ่นออก</option>
+                            <option value=4>บรรจุผลิตภัณฑ์</option>
                         </select>
                     </div>
                     <div class="d-grid gap-2">

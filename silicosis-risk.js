@@ -33,12 +33,12 @@ var lineProfile
 window.onload = async function () {
     console.log("On load!!!")
     loadLIFF();
-    await liff.init({ liffId: "1660957751-q2MDKokx" });
+    await liff.init({ liffId: "2000021821-vX3PbZPm" });
     if (liff.isLoggedIn()) {
         console.log("Logged In!");
     } else {
         console.log("Not logged In!");
-        // liff.login();
+        liff.login();
     }
     const profile = await liff.getProfile();
     lineProfile = profile
@@ -47,20 +47,21 @@ window.onload = async function () {
 function goToResultPage(level) {
     let baseUrl = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
     if (baseUrl.includes("github")) {
-        baseUrl = `${baseUrl}/thaihealth`;
+        baseUrl = `${baseUrl}/thaihealth-yst`;
     }
     const nextPage = `${baseUrl}/result.html?level=${level}`;
     // console.log(nextPage);
     window.location.replace(nextPage);
 }
 
-async function getRiskLevel(dustDensity, workHours, hasDisease, workLocation) {
-    const baseUrl = 'https://asia-southeast1-thai-health-x.cloudfunctions.net/api/silicosis/riskLevel';
+async function getRiskLevel(dustLevel, workHours, workType, workLocation, age) {
+    const baseUrl = 'https://asia-southeast1-thai-health-x.cloudfunctions.net/apiYasothon/yst/silicosis/riskLevel';
     const url = new URL(baseUrl);
-    url.searchParams.append('dustDensity', dustDensity);
+    url.searchParams.append('dustLevel', dustLevel);
     url.searchParams.append('workHours', workHours);
-    url.searchParams.append('hasDisease', hasDisease);
+    url.searchParams.append('workType', workType);
     url.searchParams.append('workLocation', workLocation);
+    url.searchParams.append('age', age);
     url.searchParams.append('lineId', lineProfile.userId);
     return fetch(url, {
         method: "GET",
@@ -74,14 +75,15 @@ async function getRiskLevel(dustDensity, workHours, hasDisease, workLocation) {
 const silicosisRiskForm = document.querySelector('form');
 silicosisRiskForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-
-    const dustDensity = document.getElementById('dust_density').value;
-    const workHours = document.getElementById('work_hours').value;
-    const hasDisease = document.getElementById('has_disease').value;
-    const workLocation = document.getElementById('work_location').value;
+    console.log("Submit!!!")
+    const dustLevel = document.getElementById('dustLevel').value;
+    const workHours = document.getElementById('workHours').value;
+    const workType = document.getElementById('workType').value;
+    const workLocation = document.getElementById('workLocation').value;
+    const age = document.getElementById('age').value;
 
     // const riskScore = calculateRisk(dustDensity, workHours, hasDisease, workLocation);
     // const riskLevel = calculateLevel(riskScore);
-    const response = await getRiskLevel(dustDensity, workHours, hasDisease, workLocation);
-    // goToResultPage(response.riskLevel);
+    const response = await getRiskLevel(dustLevel, workHours, workType, workLocation, age);
+    goToResultPage(response.riskLevel);
 });

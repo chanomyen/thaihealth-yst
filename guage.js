@@ -135,7 +135,7 @@ const infographicButton = document.querySelector('button');
 infographicButton.addEventListener('click', async (event) => {
     let baseUrl = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
     if (baseUrl.includes("github")) {
-        baseUrl = `${baseUrl}/thaihealth`;
+        baseUrl = `${baseUrl}/thaihealth-yst`;
     }
     const nextPage = `${baseUrl}/infographic.html`;
     console.log(nextPage);

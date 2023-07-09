@@ -24,17 +24,17 @@ userRegisterForm.addEventListener('submit', async (event) => {
     const data = new FormData(userRegisterForm); // create a FormData object from the form inputs
     const formDataObject = Object.fromEntries(data);
 
-    formDataObject.hitCapoc = document.getElementById("hitCapoc").checked;
-    formDataObject.fillCapoc = document.getElementById("fillCapoc").checked;
-    formDataObject.sewCapoc = document.getElementById("sewCapoc").checked;
-    formDataObject.blowCapoc = document.getElementById("blowCapoc").checked;
-    formDataObject.containProduct = document.getElementById("containProduct").checked;
+    formDataObject.hitCapoc = Number(document.getElementById("hitCapoc").checked);
+    formDataObject.fillCapoc = Number(document.getElementById("fillCapoc").checked);
+    formDataObject.sewCapoc = Number(document.getElementById("sewCapoc").checked);
+    formDataObject.blowCapoc = Number(document.getElementById("blowCapoc").checked);
+    formDataObject.containProduct = Number(document.getElementById("containProduct").checked);
     formDataObject.otherWorkType = otherWorkTypeValue;
 
-    // formDataObject.lineId = lineProfile.userId;
-    // formDataObject.lineName = lineProfile.displayName;
-    formDataObject.lineId = "lineProfile.userId";
-    formDataObject.lineName = "lineProfile.displayName";
+    formDataObject.lineId = lineProfile.userId;
+    formDataObject.lineName = lineProfile.displayName;
+    // formDataObject.lineId = "lineProfile.userId";
+    // formDataObject.lineName = "lineProfile.displayName";
 
     const json = JSON.stringify(formDataObject); // convert the FormData object to a JSON string
     console.log(json);

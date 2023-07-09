@@ -33,8 +33,6 @@ userRegisterForm.addEventListener('submit', async (event) => {
 
     formDataObject.lineId = lineProfile.userId;
     formDataObject.lineName = lineProfile.displayName;
-    // formDataObject.lineId = "lineProfile.userId";
-    // formDataObject.lineName = "lineProfile.displayName";
 
     const json = JSON.stringify(formDataObject); // convert the FormData object to a JSON string
     console.log(json);

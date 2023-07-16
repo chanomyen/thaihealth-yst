@@ -3,7 +3,7 @@
 // Variables
 const severityObject = {
     levels: ["ไม่มีนัยสำคัญ", "ต่ำ", "ปานกลาง", "สูง!", "สูงมาก!"],
-    colors: ['#0d6efd', '#198754', '#ffc107', '#fd7e14', '#dc3545']
+    colors: ['#0d6efd', '#198754', '#ffc107', '#fd7e14', '#dc3545', '#010101']
 }
 
 const chartTitle = {

@@ -33,11 +33,11 @@ const recommendations = [
 
 var barData = function () {
     return [
-        0,
-        1,
-        2,
-        3,
-        4,
+        0.5,
+        1.5,
+        2.5,
+        3.5,
+        4.5,
         // 5
     ];
 };
@@ -83,7 +83,7 @@ var config = {
         },
         valueLabel: {
             formatter: Math.round,
-            display: false
+            display: true
         }
     }
 };
